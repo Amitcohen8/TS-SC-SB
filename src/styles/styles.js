@@ -1,0 +1,2 @@
+export const o = (size) => `height: ${Number(size)*0.75}px;width: ${Number(size)*0.75}px;background-color: #000000;border-radius: 50%;display: inline-block;`
+export const x = (size) => `height: ${size}px;width: ${size}px;position: relative;background-color: #000000;&:after {position: absolute;top: 0;bottom: 0;left: 0;right: 0;content: "\\274c";font-size: ${Number(size)*0.75}px; color: #000000;text-align: center;}`
