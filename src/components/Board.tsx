@@ -13,7 +13,7 @@ export interface BoardProps {
   shape?: 'empty' | 'x' | 'o';
   backgroundColor?: string;
   size?: '100' | '200' | '300';
-  id: number
+  // id: number
 }
 
 /**
@@ -21,6 +21,8 @@ export interface BoardProps {
  */
 export const Board: React.FC<BoardProps> = ({
   backgroundColor = "yellow",
+  shape = 'empty',
+  size = '200'
 
 }) => {
 
@@ -72,6 +74,7 @@ height:600px;
 background-color:${props => props.backgroundColor}
 `
 
+export default Board
 // interface ContentProps {
 //   shape?: 'empty' | 'x' | 'o';
 //   backgroundColor?: string;
