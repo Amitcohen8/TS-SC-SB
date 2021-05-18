@@ -58,7 +58,7 @@ export const Board: React.FC<BoardProps> = ({
       <Grid backgroundColor={backgroundColor}>
         {layout}
       </Grid>
-      {winner?.length ? <h2>{`${winner} is the Winner !`}</h2> : <div />}
+      {winner?.length ? <Winner>{`${winner} is the Winner !`}</Winner> : <div />}
     </Fragment>
   );
 };
@@ -70,6 +70,11 @@ flex-wrap:wrap;
 width:600px;
 height:600px;
 background-color:${props => props.backgroundColor}
+`
+
+const Winner = styled.h2`
+margin-top:2em;
+color:blue
 `
 
 // interface ContentProps {
