@@ -13,14 +13,16 @@ export interface BoardProps {
   shape?: 'empty' | 'x' | 'o';
   backgroundColor?: string;
   size?: '100' | '200' | '300';
-  id: number
+  // id: number
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Board: React.FC<BoardProps> = ({
-  backgroundColor = "yellow",
+  backgroundColor = "#f2dcdc",
+  shape = 'empty',
+  size = '200'
 
 }) => {
 
@@ -69,9 +71,16 @@ display:flex;
 flex-wrap:wrap;
 width:600px;
 height:600px;
-background-color:${props => props.backgroundColor}
+background-color:${props => props.backgroundColor};
+position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 `
 
+<<<<<<< HEAD
 const Winner = styled.h2`
 margin-top:2em;
 color:blue
@@ -108,4 +117,15 @@ color:blue
 // }
 // }
 // `
+=======
+const Winner = styled.h1`
+text-align:center;
+color:blue;
+margin-bottom:-200px;
+font-family: Arial, Helvetica, sans-serif;
+`
+
+export default Board
+
+>>>>>>> delete-unnecessary-entities
 
