@@ -20,7 +20,7 @@ export interface BoardProps {
  * Primary UI component for user interaction
  */
 export const Board: React.FC<BoardProps> = ({
-  backgroundColor = "yellow",
+  backgroundColor = "#f2dcdc",
   shape = 'empty',
   size = '200'
 
@@ -60,7 +60,7 @@ export const Board: React.FC<BoardProps> = ({
       <Grid backgroundColor={backgroundColor}>
         {layout}
       </Grid>
-      {winner?.length ? <h2>{`${winner} is the Winner !`}</h2> : <div />}
+      {winner?.length ? <Winner>{`${winner} is the Winner !`}</Winner> : <div />}
     </Fragment>
   );
 };
@@ -71,39 +71,22 @@ display:flex;
 flex-wrap:wrap;
 width:600px;
 height:600px;
-background-color:${props => props.backgroundColor}
+background-color:${props => props.backgroundColor};
+position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+`
+
+const Winner = styled.h1`
+text-align:center;
+color:blue;
+margin-bottom:-200px;
+font-family: Arial, Helvetica, sans-serif;
 `
 
 export default Board
-// interface ContentProps {
-//   shape?: 'empty' | 'x' | 'o';
-//   backgroundColor?: string;
-//   size?: '100' | '200' | '300';
-// }
 
-// interface ShapeProps {
-//   shape?: 'empty' | 'x' | 'o';
-//   size?: '100' | '200' | '300';
-// }
-
-// const Content = styled.div<ContentProps>`
-// background:${props => props.backgroundColor};
-// color:blue;
-// width:${props => props.size}px;
-// height:${props => props.size}px;
-// display:flex;
-// justify-content:center;
-// align-items:center;
-// `
-// const Shape = styled.span<ShapeProps>`
-// ${props=>{
-//   if(props.shape === 'o'){
-//     return o(props.size)
-//   }
-//   else if (props.shape === 'x'){
-//     return x(props.size)
-//   }
-// }
-// }
-// `
 
